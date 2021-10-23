@@ -3,12 +3,12 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBvpl-t9V1tN5HD53RphiR1hflRGJbjkN8",
-    authDomain: "management-c318c.firebaseapp.com",
-    projectId: "management-c318c",
-    storageBucket: "management-c318c.appspot.com",
-    messagingSenderId: "141954288739",
-    appId: "1:141954288739:web:11fde7c0aa6ee65f70bc56"
+    apiKey: "AIzaSyDmMrCGyzkLL_a_dy2gYPkfm5y_tK_SQSs",
+    authDomain: "management-8c164.firebaseapp.com",
+    projectId: "management-8c164",
+    storageBucket: "management-8c164.appspot.com",
+    messagingSenderId: "341699713666",
+    appId: "1:341699713666:web:07ec8f7067be44326e329b"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);

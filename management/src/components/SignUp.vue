@@ -65,8 +65,7 @@ export default {
         submit() {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth,this.email, this.password)
-        .then(() => {
-          updateProfile(auth.currentUser,{displayName: this.username})
+        .then((auth) => {updateProfile(auth.currentUser,{displayName: this.username})
         })
         .then(()=> {
                 alert("Your account has been successfully created!")

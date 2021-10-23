@@ -1,8 +1,8 @@
 <template>
     <h1>Homepage</h1>
-    <h1 v-if="role== 'Admin'">Is Admin</h1>
-    <h1 v-if="role== 'Manager'">Is Manager</h1>
-    <h1 v-if="role== 'Member'">Is Member</h1>
+    <h1 v-if="role() == 'Admin'">Is Admin</h1>
+    <h1 v-if="role() == 'Manager'">Is Manager</h1>
+    <h1 v-if="role() == 'Member'">Is Member</h1>
 </template>
 
 <script>
