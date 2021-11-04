@@ -49,7 +49,7 @@ import { getFirestore } from "firebase/firestore"
 import { doc, setDoc } from "firebase/firestore"
 const db = getFirestore(firebaseApp);
 
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
 
 export default {
     data() {
@@ -59,26 +59,26 @@ export default {
             role: "",
             password: ""
         }
-    },
+    }, 
 
     methods: {
         submit() {
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth,this.email, this.password)
-        .then((auth) => {updateProfile(auth.currentUser,{displayName: this.username})
-        })
-        .then(()=> {
-                alert("Your account has been successfully created!")
-                setDoc(doc(db, "user", this.username), {
-                    role: this.role, 
-                    name: this.username,
-                    email: this.email,
-                    password: this.password
-                }).then(() => console.log("Document written"))
+            const auth = getAuth();
+            createUserWithEmailAndPassword(auth,this.email, this.password)
+            .then(()=> {
+                    alert("Your account has been successfully created!")
+                    setDoc(doc(db, "user", this.email), {
+                        role: this.role, 
+                        name: this.username,
+                        email: this.email,
+                        password: this.password
+                    })
+                    this.$router.push({path: './'})
             });
-        }       
+        }
     }
-};
+}
+
 </script>
 
 <style> 

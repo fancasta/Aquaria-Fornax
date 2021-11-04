@@ -1,5 +1,4 @@
 <template>
-    <h1>Homepage</h1>
     <h1>Login</h1>
     <div>
         <label for="email">Email</label>
@@ -29,8 +28,8 @@ export default {
 
     methods: {
         submit() {
-        const auth = getAuth();
-        signInWithEmailAndPassword(auth, this.email, this.password).then(this.$router.push({ path: './home' }))
+            const auth = getAuth();
+            signInWithEmailAndPassword(auth, this.email, this.password).then(() => this.$router.push({ path: './home' }))
         }       
     } 
 };
