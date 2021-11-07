@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import DashboardSample from "../components/DashboardSample.vue";
+import DashboardSample from "@/components/Manager/DashboardSample.vue";
 
 export default {
   name: "Group1",

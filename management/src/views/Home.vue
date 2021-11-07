@@ -16,7 +16,9 @@
         <h1> We are {{role}} </h1>
         <CreateProject/>
         <ManagerDashboard/>
+        <router-link to="/kpi">Go see KPI</router-link>
     </div>
+    <BackButton/>
     <LogOut/>
 </template>
 
@@ -24,7 +26,8 @@
 import CreateProject from '@/components/Manager/CreateProject.vue'
 import ManagerDashboard from '@/components/Manager/ManagerDashboard.vue'
 import MemberDashboard from '@/components/Member/MemberDashboard.vue'
-import LogOut from '@/components/LogOut.vue'
+import LogOut from '@/components/User/LogOut.vue'
+import BackButton from '@/components/BasicComponent/BackButton.vue'
 import firebaseApp from '@/firebase.js'
 import { getFirestore } from "firebase/firestore"
 import { doc, getDoc } from "firebase/firestore"
@@ -38,7 +41,8 @@ export default {
         LogOut, 
         CreateProject,
         ManagerDashboard,
-        MemberDashboard
+        MemberDashboard,
+        BackButton
     }, 
     data(){
         return{

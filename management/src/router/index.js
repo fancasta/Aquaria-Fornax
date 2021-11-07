@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import LoginPage from '@/views/LoginPage.vue'
 import Register from '@/views/Register.vue'
 import ProjectDisplay from '@/views/ProjectDisplay.vue'
+import ManagerKPI from '@/views/ManagerKPI.vue'
 import Home from '@/views/Home.vue'
 
 const routes = [
@@ -24,6 +25,11 @@ const routes = [
         path: '/project',
         name: 'ProjectDisplay',
         component: ProjectDisplay
+    },
+    {
+        path: '/kpi',
+        name: 'ManagerKPI',
+        component: ManagerKPI
     }
 ]
 

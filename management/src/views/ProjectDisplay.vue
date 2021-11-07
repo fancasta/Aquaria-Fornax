@@ -2,10 +2,7 @@
     <h1>Project Display</h1>
     <ProjectInfo/>
     <div v-if = "role === 'Member'">
-        <h1> We are {{role}} {{position}}</h1>
-        <div v-if = "position === 'Leader'">
-            <AddMember/>
-        </div>
+        <h1> We are {{role}} </h1>
     </div>
 
 
@@ -18,11 +15,13 @@
         <h1> We are {{role}} </h1>
         <AddMember/>
     </div>
+    <BackButton/>
 </template>
 
 <script>
 import ProjectInfo from '@/components/Project/ProjectInfo.vue'
-import AddMember from '@/components/Project/AddMember.vue'
+import AddMember from '@/components/Manager/AddMember.vue'
+import BackButton from '@/components/BasicComponent/BackButton.vue'
 
 import firebaseApp from '@/firebase.js'
 import { getFirestore } from "firebase/firestore"
@@ -35,13 +34,13 @@ export default {
     name: "ProjectDisplay", 
     components: {
         ProjectInfo,
-        AddMember
+        AddMember,
+        BackButton
     }, 
     data(){
         return{
             email:"",
-            role:"",
-            position:"",
+            role:""
         }
     },
 
@@ -53,7 +52,6 @@ export default {
             this.email = user.email
             console.log(this.email)
             this.findRole()
-            this.findPosition()
         } else {
             console.log("Sorry")
         }
@@ -67,19 +65,6 @@ export default {
             console.log("Document data:", docSnap.data().role);
             this.role = docSnap.data().role
             return docSnap.data().role;
-        },
-
-        async findPosition() {
-            this.project_name = this.$route.query.project_name
-            const docRef = doc(db, "user", this.email);
-            const docSnap = await getDoc(docRef);
-            let leadingProject = docSnap.data().leading_project
-            console.log(leadingProject.includes(this.project_name));
-            if (leadingProject.includes(this.project_name)) {
-                this.position = "Leader"
-            } else {
-                this.position = "Member"
-            }
         }
     },
 }

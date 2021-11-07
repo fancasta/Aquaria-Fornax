@@ -116,7 +116,7 @@
 </template>
 
 <script>
-import IconicFilledMedium from "../components/IconicFilledMedium.vue";
+import IconicFilledMedium from "@/components/DashboardComponent/IconicFilledMedium.vue";
 
 export default {
   name: "TopMenu",

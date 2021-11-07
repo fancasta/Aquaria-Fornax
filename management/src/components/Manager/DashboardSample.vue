@@ -882,17 +882,17 @@
 </template>
 
 <script>
-import TopMenu from "../components/TopMenu.vue";
-import IconicGhostSmall from "../components/IconicGhostSmall.vue";
-import TooltipWhite from "../components/TooltipWhite.vue";
-import Item from "../components/Item.vue";
-import Day from "../components/Day.vue";
-import X2 from "../components/X2.vue";
-import CalendarDateSelected from "../components/CalendarDateSelected.vue";
-import IconicFilledMedium from "../components/IconicFilledMedium.vue";
-import Row from "../components/Row.vue";
-import BadgeFilled from "../components/BadgeFilled.vue";
-import Column from "../components/Column.vue";
+import TopMenu from "@/components/DashboardComponent/TopMenu.vue";
+import IconicGhostSmall from "@/components/DashboardComponent/IconicGhostSmall.vue";
+import TooltipWhite from "@/components/DashboardComponent/TooltipWhite.vue";
+import Item from "@/components/DashboardComponent/Item.vue";
+import Day from "@/components/DashboardComponent/Day.vue";
+import X2 from "@/components/DashboardComponent/X2.vue";
+import CalendarDateSelected from "@/components/DashboardComponent/CalendarDateSelected.vue";
+import IconicFilledMedium from "@/components/DashboardComponent/IconicFilledMedium.vue";
+import Row from "@/components/DashboardComponent/Row.vue";
+import BadgeFilled from "@/components/DashboardComponent/BadgeFilled.vue";
+import Column from "@/components/DashboardComponent/Column.vue";
 
 export default {
   name: "DashboardSample",

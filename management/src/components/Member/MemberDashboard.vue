@@ -46,11 +46,7 @@ export default {
         async display() {
             let memberDoc = await getDoc(doc(db, "user", this.email))
             let projects = await getDocs(collection(db, "projects"))
-            let leadingProjectList = memberDoc.data().leading_project
             let memberProjectList = memberDoc.data().member_project
-            if (memberProjectList == undefined) {
-                memberProjectList = []
-            }
             if (memberProjectList == undefined) {
                 memberProjectList = []
             }
@@ -58,33 +54,26 @@ export default {
             projects.forEach((doc) => {
                 let docData = doc.data()
                 var project_name = docData.project_name
-                if (leadingProjectList.includes(project_name) || memberProjectList.includes(project_name)) {
+                if (memberProjectList.includes(project_name)) {
                     var table = document.getElementById("table")
                     var row = table.insertRow(ind)
-                    var manager_email = docData.manager_email
+                    var manager_name = docData.manager_name
                     var cell1 = row.insertCell(0); 
                     var cell2 = row.insertCell(1); 
                     var cell3 = row.insertCell(2);
                     var cell4 = row.insertCell(3);
-                    var cell5 = row.insertCell(4);
                     cell1.innerHTML = ind; 
                     cell2.innerHTML = project_name; 
-                    cell3.innerHTML = manager_email;
-
+                    cell3.innerHTML = manager_name;
                     var move = document.createElement("button")
                     move.innerHTML ="Check out"
                     move.onclick =  ()=>{
                         this.checkout(project_name)
                     }
-                    cell5.appendChild(move)
+                    cell4.appendChild(move)
 
                     ind+= 1
 
-                    if (leadingProjectList.includes(project_name)) {
-                        cell4.innerHTML = "Leader";
-                    } else {
-                        cell4.innerHTML = "Member";
-                    }
                 } 
             })
         },

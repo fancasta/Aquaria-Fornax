@@ -4,7 +4,6 @@
         <tr>  
         <th>Index</th>
         <th>Project Name</th>       
-        <th>Project Leader</th>
         <th>Option</th>
         </tr>
     </table><br><br>
@@ -55,22 +54,19 @@ export default {
                 if (managingProjectList.includes(project_name)) {
                     var table = document.getElementById("table")
                     var row = table.insertRow(ind)
-                    var leader_name = docData.leader_name
                     var cell1 = row.insertCell(0); 
                     var cell2 = row.insertCell(1); 
                     var cell3 = row.insertCell(2);
-                    var cell4 = row.insertCell(3);
 
                     cell1.innerHTML = ind; 
                     cell2.innerHTML = project_name; 
-                    cell3.innerHTML = leader_name;
 
                     var move = document.createElement("button")
                     move.innerHTML ="Check out"
                     move.onclick =  ()=>{
                         this.checkout(project_name)
                     }
-                    cell4.appendChild(move)
+                    cell3.appendChild(move)
 
                     ind+= 1
                 }

@@ -6,16 +6,6 @@
     </div>
     <br>
     <div>
-        <label for="leader_name">Leader Name</label>
-        <br><input type="text" id="leader_name" v-model="leader_name"/>       
-    </div>
-    <br>
-    <div>
-        <label for="leader_email">Leader Email</label>
-        <br><input type="email" id="leader_email" v-model="leader_email"/>       
-    </div>
-    <br>
-    <div>
         <label for="description">Description</label>
         <br><input type="text" id="description" v-model="description"/>       
     </div>
@@ -27,7 +17,7 @@
 <script>
 import firebaseApp from '@/firebase.js'
 import { getFirestore } from "firebase/firestore"
-import { doc, setDoc, updateDoc, arrayUnion } from "firebase/firestore"
+import { doc, setDoc, getDoc, updateDoc, arrayUnion } from "firebase/firestore"
 const db = getFirestore(firebaseApp);
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -39,10 +29,9 @@ export default {
     }, 
     data(){
         return{
+            manager_name:"",
             manager_email:"",
             project_name:"",
-            leader_name:"",
-            leader_email:"",
             description:"",
         }
     },
@@ -56,23 +45,22 @@ export default {
         } else {
             console.log("Sorry")
         }
+        this.getManagerName()
 });
     },
 
     methods: {
+        async getManagerName() {
+            let managerDoc = await getDoc(doc(db, "user", this.manager_email))
+            this.manager_name = managerDoc.data().manager_name
+        },
         async submit() {
             alert("Create new project successfully!")
             await setDoc(doc(db, "projects", this.project_name), {
                 project_name: this.project_name,
-                leader_name: this.leader_name,
-                leader_email: this.leader_email,
+                manager_name: this.manager_name,
                 manager_email: this.manager_email,
                 description: this.description,
-            });
-
-            const leaderDoc = doc(db, "user", this.leader_email);
-            await updateDoc(leaderDoc, {
-                leading_project: arrayUnion(this.project_name)
             });
 
             const managerDoc = doc(db, "user", this.manager_email);

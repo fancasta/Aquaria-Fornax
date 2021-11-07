@@ -1,10 +1,9 @@
 <template>
-    <h1>Register page</h1>
     <SignUp/>
 </template>
 
 <script>
-import SignUp from '@/components/SignUp.vue'
+import SignUp from '@/components/User/SignUp.vue'
 export default {
     name: "Register", 
     components: {

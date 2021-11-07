@@ -2,11 +2,11 @@
     <h1>Project Information</h1>
     Project name: {{project_name}}
     <br>
-    Project Leader: {{project_leader}}
-    <br>
     Description: {{description}}
     <br>
-    Manager: {{manager_email}}
+    Manager Name: {{manager_name}}
+    <br>
+    Manager Email: {{manager_email}}
 </template>
 
 <script>
@@ -26,8 +26,9 @@ export default {
         return{
             email:"",
             project_name:"", 
-            project_leader:"", 
+
             description:"",
+            manager_name:"",
             manager_email:"", 
             project_member:[], 
         }
@@ -52,8 +53,8 @@ export default {
             let projectDoc = await getDoc(doc(db, "projects", project_name))
             let projectData = projectDoc.data()
             this.project_name = projectData.project_name 
-            this.project_leader = projectData.leader_name
             this.description = projectData.description
+            this.manager_name = projectDoc.manager_name
             this.manager_email = projectData.manager_email 
         }           
     }
