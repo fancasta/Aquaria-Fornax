@@ -1,37 +1,34 @@
 <template>
-    <Group1/>
+  <dashboard-sample v-bind="dashboardSampleData" />
 </template>
 
 <script>
-import Group1 from "@/components/Manager/Group1.vue";
+import DashboardSample from "../components/Manager/DashboardSample.vue";
 
 export default {
   name: "App",
   components: {
-    Group1,
+    DashboardSample,
   },
   data() {
-    return { group1Data };
+    return { dashboardSampleData };
   },
 };
 
 const iconicFilledMediumData = {
-  size: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
+  size: "size.png",
 };
 
 const topMenuData = {
-  size: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
-  size2:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
-  size3:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
-  size4:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
+  size: "size.png",
+  size2: "size.png",
+  size3: "size.png",
+  size4: "size.png",
   iconicFilledMediumProps: iconicFilledMediumData,
 };
 
 const iconicGhostSmallData = {
-  src: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/icon@2x.svg",
+  src: "icon.svg",
 };
 
 const tooltipWhiteData = {
@@ -53,7 +50,7 @@ const item3Data = {
 };
 
 const iconicGhostSmall2Data = {
-  src: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/icon@2x.svg",
+  src: "icon.svg",
   className: "iconic-ghost-small-1",
 };
 
@@ -130,37 +127,37 @@ const x22Data = {
 };
 
 const iconicFilledMedium2Data = {
-  size: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
+  size: "size.png",
   className: "iconic-filled-medium-2",
 };
 
 const rowData = {
-  row: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/61825fb1e1fbdf8794997c78/img/base-4@2x.svg",
+  row: "#1",
   text5: "#1",
 };
 
 const row2Data = {
-  row: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/61825fb1e1fbdf8794997c78/img/base-3@2x.svg",
   text5: "#2",
-  className: "column-item",
+  row: "#2",
+  // className: "column-item",
 };
 
 const row3Data = {
-  row: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/61825fb1e1fbdf8794997c78/img/base-2@2x.svg",
   text5: "#3",
-  className: "column-item",
+  row: "#3",
+  // className: "column-item",
 };
 
 const row4Data = {
-  row: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/61825fb1e1fbdf8794997c78/img/base-1@2x.svg",
   text5: "#4",
-  className: "column-item",
+  row: "#4",
+  // className: "column-item",
 };
 
 const row5Data = {
-  row: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/61825fb1e1fbdf8794997c78/img/base@2x.svg",
   text5: "#5",
-  className: "column-item",
+  row: "#5",
+  // className: "column-item",
 };
 
 const badgeFilledData = {
@@ -210,10 +207,8 @@ const dashboardSampleData = {
   users: "Users",
   revenue: "Revenue",
   octNov2021: "Oct - Nov 2021",
-  rectanglePath2:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/shape-6@2x.svg",
-  size5:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
+  rectanglePath2: "shape-6.svg",
+  size5: "size.png",
   x40K: "$40k",
   x30K: "$30k",
   x20K: "$20k",
@@ -222,19 +217,14 @@ const dashboardSampleData = {
   mon: "Mon",
   totalRevenue: "Total Revenue",
   singaporeApac: "$76685.41",
-  size4:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/shape-7@2x.svg",
-  size: "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
+  size4: "shape-7.svg",
+  size: "size.png",
   title: "7,00%",
-  size6:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
-  size7:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
+  size6: "size.png",
+  size7: "size.png",
   october: "October",
-  size8:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
-  size9:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
+  size8: "size.png",
+  size9: "size.png",
   number2: "2021",
   yowYuXuan: "S",
   m: "M",
@@ -262,15 +252,11 @@ const dashboardSampleData = {
   yx: "Filter",
   price2: "Projects",
   dashboard: "Download CSV",
-  size10:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/61825fb1e1fbdf8794997c78/img/shape@2x.svg",
-  size2:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
+  size10: "shape.svg",
+  size2: "size.png",
   projects: "Export",
-  size11:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/61825fb1e1fbdf8794997c78/img/shape-9@2x.svg",
-  size3:
-    "https://anima-uploads.s3.amazonaws.com/projects/61825fa300fc739048a5ec95/releases/6182c1b0aece272ee7259e11/img/size@2x.png",
+  size11: "shape-9.svg",
+  size3: "size.png",
   downloadCsv: "Project ID",
   // number10: "Project ID",
   place: "Status",
@@ -320,9 +306,5 @@ const dashboardSampleData = {
   badgeFilled5Props: badgeFilled5Data,
   columnProps: columnData,
   column2Props: column2Data,
-};
-
-const group1Data = {
-  topMenuProps: dashboardSampleData,
 };
 </script>
