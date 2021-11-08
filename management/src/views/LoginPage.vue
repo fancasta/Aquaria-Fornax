@@ -1,5 +1,6 @@
 <template>
     <Login/>
+    <div style="width: 100px; height: 200px;"></div>
 </template>
 
 <script>

@@ -1,12 +1,10 @@
 <template>
     <div class="container shadow mt-3 p-5 col-6">
     <div class="d-flex justify-content-center m-2">
-        <h1>Add Member</h1>
-    </div>
-    <label for="member_name">Member name</label>
-    <input class="form-control m-1" type="text" id="member_name" v-model="member_name"/>       
-    <label for="member_email">Member Email</label>
-    <input class="form-control m-1" type="email" id="member_email" v-model="member_email"/>       
+        <h1>Update on progress</h1>
+    </div>   
+    <label for="update">Update message</label>
+    <textarea class="form-control m-1" type="text" id="update" v-model="update" placeholder="Type in update message"></textarea>     
     <div class="d-flex justify-content-center">
         <button @click.prevent="submit" class="btn btn-primary col-6 m-2">Submit</button>
     </div>
@@ -16,13 +14,13 @@
 <script>
 import firebaseApp from '@/firebase.js'
 import { getFirestore } from "firebase/firestore"
-import { doc, updateDoc, arrayUnion } from "firebase/firestore"
+import { doc, updateDoc } from "firebase/firestore"
 const db = getFirestore(firebaseApp);
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export default {
-    name: "AddMember", 
+    name: "UpdateMessage", 
     components: {
         
     }, 
@@ -30,8 +28,7 @@ export default {
         return{
             email:"",
             project_name:"",
-            member_name:"",
-            member_email:"",
+            update:"",
         }
     },
 
@@ -51,15 +48,9 @@ export default {
         async submit() {
             alert("Add new member successfully!")
             this.project_name = this.$route.query.project_name
-            const memberDoc = doc(db, "user", this.member_email);
-            await updateDoc(memberDoc, {
-                member_project: arrayUnion(this.project_name)
-            });
-
             const projectDoc = doc(db, "projects", this.project_name);
             await updateDoc(projectDoc, {
-                member_list: arrayUnion(this.member_email),
-                member_list_name: arrayUnion(this.member_name)
+                update : this.update
             });
         }
     },

@@ -1,6 +1,5 @@
 <template>
-    <br>
-    <button @click.prevent="submit">Log Out</button>
+    <button @click.prevent="submit" class="btn btn-primary">Log Out</button>
 </template>
 
 <script>

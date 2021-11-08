@@ -5,7 +5,7 @@
         <th>Index</th>
         <th>Project Name</th>       
         <th>Project Manager</th>
-        <th>Position</th>
+        <th>Option</th>
         </tr>
     </table><br><br>
 </template>
@@ -57,7 +57,7 @@ export default {
                 if (memberProjectList.includes(project_name)) {
                     var table = document.getElementById("table")
                     var row = table.insertRow(ind)
-                    var manager_name = docData.manager_name
+                    let manager_name = docData.manager_name
                     var cell1 = row.insertCell(0); 
                     var cell2 = row.insertCell(1); 
                     var cell3 = row.insertCell(2);

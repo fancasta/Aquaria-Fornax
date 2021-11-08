@@ -1,25 +1,33 @@
 <template>
-    <h1>Homepage</h1>
+    <div class="d-flex justify-content-center m-2">
+        <h1>Homepage</h1>
+    </div>
 
     <div v-if = "role === 'Member'">
-        <h1> We are {{role}} </h1>
         <MemberDashboard/>
     </div>
 
 
     <div v-if = "role === 'Admin'">
-        <h1> We are {{role}} </h1>
     </div>
 
 
     <div v-if = "role === 'Manager'">
-        <h1> We are {{role}} </h1>
-        <CreateProject/>
         <ManagerDashboard/>
-        <router-link to="/kpi">Go see KPI</router-link>
+        <div class="d-flex justify-content-center m-2">
+        <button class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+            Create Project
+        </button>
+        </div>
+        <div class="collapse" id="collapseExample">
+            <CreateProject/>
+        </div>
     </div>
-    <BackButton/>
-    <LogOut/>
+    <div class="d-flex justify-content-center m-2">
+        <BackButton/>
+        <LogOut/>
+    </div>
+    <div style="width: 100px; height: 200px;"></div>
 </template>
 
 <script>

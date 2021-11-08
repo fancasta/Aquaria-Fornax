@@ -2,7 +2,8 @@
     <h1>Project Display</h1>
     <ProjectInfo/>
     <div v-if = "role === 'Member'">
-        <h1> We are {{role}} </h1>
+        <FinishTask/>
+        <UpdateMessage/>
     </div>
 
 
@@ -14,14 +15,20 @@
     <div v-if = "role === 'Manager'">
         <h1> We are {{role}} </h1>
         <AddMember/>
+        <AssignTask/>
     </div>
     <BackButton/>
+    <div style="width: 100px; height: 200px;"></div>
 </template>
 
 <script>
 import ProjectInfo from '@/components/Project/ProjectInfo.vue'
 import AddMember from '@/components/Manager/AddMember.vue'
+import AssignTask from '@/components/Manager/AssignTask.vue'
 import BackButton from '@/components/BasicComponent/BackButton.vue'
+
+import FinishTask from '@/components/Member/FinishTask.vue'
+import UpdateMessage from '@/components/Member/UpdateMessage.vue'
 
 import firebaseApp from '@/firebase.js'
 import { getFirestore } from "firebase/firestore"
@@ -35,7 +42,10 @@ export default {
     components: {
         ProjectInfo,
         AddMember,
-        BackButton
+        AssignTask,
+        BackButton,
+        FinishTask,
+        UpdateMessage
     }, 
     data(){
         return{

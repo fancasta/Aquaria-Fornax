@@ -1,11 +1,15 @@
 <template>
     <h1>Project List</h1>
-    <table id = "table" class = "auto-index">
-        <tr>  
-        <th>Index</th>
-        <th>Project Name</th>       
-        <th>Option</th>
-        </tr>
+    <table id = "table" class="table table-striped thead-dark table-hover">
+        <thead>
+            <tr>  
+            <th>Index</th>
+            <th>Project Name</th>       
+            <th>Option</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
     </table><br><br>
 </template>
 
