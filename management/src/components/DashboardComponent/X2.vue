@@ -1,22 +1,24 @@
 <template>
   <div class="digits-item-1 montserrat-normal-mine-shaft-14px" data-id="11:412">
-    <div class="number-6 valign-text-middle" data-id="11:414">{{ number }}</div>
-    <div class="number-7 valign-text-middle" data-id="11:416">
+    <div class="number-6 dashboard-valign-text-middle" data-id="11:414">
+      {{ number }}
+    </div>
+    <div class="number-7 dashboard-valign-text-middle" data-id="11:416">
       {{ number2 }}
     </div>
-    <div class="number-7 valign-text-middle" data-id="11:418">
+    <div class="number-7 dashboard-valign-text-middle" data-id="11:418">
       {{ number3 }}
     </div>
-    <div class="number-7 valign-text-middle" data-id="11:420">
+    <div class="number-7 dashboard-valign-text-middle" data-id="11:420">
       {{ number4 }}
     </div>
-    <div class="number-7 valign-text-middle" data-id="11:422">
+    <div class="number-7 dashboard-valign-text-middle" data-id="11:422">
       {{ number5 }}
     </div>
-    <div class="number-7 valign-text-middle" data-id="11:424">
+    <div class="number-7 dashboard-valign-text-middle" data-id="11:424">
       {{ number6 }}
     </div>
-    <div class="number-7 valign-text-middle" data-id="11:426">
+    <div class="number-7 dashboard-valign-text-middle" data-id="11:426">
       {{ number7 }}
     </div>
   </div>

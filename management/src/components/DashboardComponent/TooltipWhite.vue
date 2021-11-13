@@ -2,7 +2,11 @@
   <div :class="[`tooltip-white`, className || ``]" data-id="11:90">
     <div class="overlap-group-16" data-id="an|M4daGHmC">
       <div
-        class="price-2 valign-text-middle montserrat-normal-mine-shaft-12px"
+        class="
+          price-2
+          dashboard-valign-text-middle
+          montserrat-normal-mine-shaft-12px
+        "
         data-id="I11:90;0:1222"
       >
         {{ price }}

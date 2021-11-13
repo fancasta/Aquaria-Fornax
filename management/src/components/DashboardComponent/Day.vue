@@ -2,7 +2,7 @@
   <div class="bottom-item" data-id="11:145">
     <div class="line-1" data-id="11:147"></div>
     <div
-      class="tue valign-text-middle montserrat-normal-star-dust-12px"
+      class="tue dashboard-valign-text-middle montserrat-normal-star-dust-12px"
       data-id="11:146"
     >
       {{ children }}

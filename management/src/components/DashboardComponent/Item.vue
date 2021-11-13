@@ -2,7 +2,7 @@
   <div :class="[`item-2`, className || ``]" data-id="11:101">
     <div class="indicator-1" data-id="11:103"></div>
     <div
-      class="seo valign-text-middle montserrat-normal-star-dust-12px"
+      class="seo dashboard-valign-text-middle montserrat-normal-star-dust-12px"
       data-id="11:102"
     >
       {{ children }}

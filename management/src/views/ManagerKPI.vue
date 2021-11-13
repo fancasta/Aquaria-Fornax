@@ -1,5 +1,5 @@
 <template>
-  <BackButton/>
+  <BackButton />
   <dashboard-sample v-bind="dashboardSampleData" />
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: "App",
   components: {
     DashboardSample,
-    BackButton
+    BackButton,
   },
   data() {
     return { dashboardSampleData };

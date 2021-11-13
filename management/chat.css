@@ -1,17 +1,50 @@
-<template>
-  <Chat />
-</template>
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-<script>
-import Chat from "@/components/Chat/Chat.vue";
+nav {
+  @apply fixed;
+  @apply w-full;
+  @apply bg-gray-900;
+  @apply shadow-lg;
+  @apply top-0;
 
-export default {
-  name: "ChatPage",
-  components: { Chat },
-};
-</script>
+  z-index: 20;
+}
 
-<style scoped>
+nav > div {
+  @apply container;
+  @apply max-w-xl;
+  @apply flex;
+  @apply content-center;
+  @apply items-center;
+  @apply justify-between;
+  @apply h-16;
+  @apply px-4;
+}
+
+nav h1 {
+  @apply text-white;
+  @apply text-xl;
+}
+
+nav h1 > strong {
+  @apply text-green-300;
+}
+
+nav .login {
+  @apply right-0;
+  @apply flex;
+  @apply ml-auto;
+}
+
+nav button {
+  @apply text-white;
+  @apply p-1;
+  @apply rounded;
+  @apply px-4;
+}
+
 .avatar {
   @apply h-8;
   @apply w-8;
@@ -41,7 +74,7 @@ export default {
   @apply text-white;
 }
 
-.bottom {
+.chatbox_bottom {
   @apply fixed;
   @apply bottom-0;
   @apply bg-gray-900;
@@ -49,13 +82,13 @@ export default {
   @apply w-full;
 }
 
-.bottom form {
+.chatbox_bottom form {
   @apply w-full;
   @apply flex;
   @apply justify-between;
 }
 
-.bottom form input {
+.chatbox_bottom form input {
   @apply flex-grow;
   @apply m-2;
   @apply py-2;
@@ -92,4 +125,3 @@ export default {
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-200;
 }
-</style>

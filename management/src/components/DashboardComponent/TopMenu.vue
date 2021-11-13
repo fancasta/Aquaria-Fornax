@@ -3,7 +3,11 @@
     <div class="top-bar" data-id="11:27">
       <div class="left-1" data-id="11:29">
         <h1
-          class="title valign-text-middle montserrat-bold-azure-radiance-24px"
+          class="
+            title
+            dashboard-valign-text-middle
+            montserrat-bold-azure-radiance-24px
+          "
           data-id="20:171"
         >
           XYZ Marketing
@@ -18,7 +22,7 @@
             <div
               class="
                 yow-yu-xuan-1
-                valign-text-middle
+                dashboard-valign-text-middle
                 montserrat-normal-mine-shaft-16px
               "
               data-id="11:43"
@@ -33,7 +37,7 @@
             </div>
           </div>
           <div
-            class="yx valign-text-middle montserrat-bold-black-16px"
+            class="yx dashboard-valign-text-middle montserrat-bold-black-16px"
             data-id="20:172"
           >
             YX
@@ -46,7 +50,7 @@
           <div
             class="
               search-text
-              valign-text-middle
+              dashboard-valign-text-middle
               montserrat-normal-star-dust-14px
             "
             data-id="11:65"
@@ -83,12 +87,18 @@
     </div>
     <div class="sub-menu" data-id="11:70">
       <div class="links montserrat-normal-black-14px" data-id="11:73">
-        <div class="dashboard valign-text-middle" data-id="11:74">
+        <div class="dashboard dashboard-valign-text-middle" data-id="11:74">
           Dashboard
         </div>
-        <div class="inbox valign-text-middle" data-id="11:75">Inbox</div>
-        <div class="security valign-text-middle" data-id="11:76">Security</div>
-        <div class="calendar valign-text-middle" data-id="11:77">Calendar</div>
+        <div class="inbox dashboard-valign-text-middle" data-id="11:75">
+          Inbox
+        </div>
+        <div class="security dashboard-valign-text-middle" data-id="11:76">
+          Security
+        </div>
+        <div class="calendar dashboard-valign-text-middle" data-id="11:77">
+          Calendar
+        </div>
         <div class="more-horizontal" data-id="11:78">
           <img
             class="oval-1"
@@ -106,7 +116,11 @@
         </div>
       </div>
       <div
-        class="address valign-text-middle montserrat-semi-bold-mine-shaft-12px"
+        class="
+          address
+          dashboard-valign-text-middle
+          montserrat-semi-bold-mine-shaft-12px
+        "
         data-id="11:72"
       >
         28 October 2021

@@ -5,7 +5,11 @@
     data-id="11:212"
   >
     <div
-      class="text-1 valign-text-middle encodesans-normal-mine-shaft-14px"
+      class="
+        text-1
+        dashboard-valign-text-middle
+        encodesans-normal-mine-shaft-14px
+      "
       data-id="11:214"
     >
       {{ text5 }}

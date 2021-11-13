@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 import router from "./router/index.js";
 import "../styleguide.css";
-import "../globals.css";
+import "../kpidashboard.css";
+import "../chat.css";
 
 createApp(App)
   .use(router)

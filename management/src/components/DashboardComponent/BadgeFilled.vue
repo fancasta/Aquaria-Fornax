@@ -1,7 +1,7 @@
 <template>
   <div :class="[`badge-filled-3`, className || ``]" data-id="11:235">
     <div
-      class="pending valign-text-middle montserrat-normal-white-12px"
+      class="pending dashboard-valign-text-middle montserrat-normal-white-12px"
       data-id="I11:235;0:889"
     >
       {{ children }}
