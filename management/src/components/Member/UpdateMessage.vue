@@ -46,7 +46,7 @@ export default {
 
     methods: {
         async submit() {
-            alert("Add new member successfully!")
+            alert("Update progress successfully!")
             this.project_name = this.$route.query.project_name
             const projectDoc = doc(db, "projects", this.project_name);
             await updateDoc(projectDoc, {

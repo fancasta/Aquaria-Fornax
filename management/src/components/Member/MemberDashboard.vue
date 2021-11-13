@@ -1,19 +1,32 @@
 <template>
-    <h1>Project List</h1>
-    <table id = "table" class = "auto-index">
-        <tr>  
-        <th>Index</th>
-        <th>Project Name</th>       
-        <th>Project Manager</th>
-        <th>Option</th>
-        </tr>
+    <div class="container shadow mt-3 p-5 col-10">
+    <div class="d-flex justify-content-center m-2">
+        <h1>Project List</h1>
+    </div>
+    <div class="d-flex justify-content-center m-2">
+    <table id = "table" class="table table-striped thead-dark table-hover">
+        <thead>
+            <tr>  
+            <th>Index</th>
+            <th>Project Name</th>       
+            <th>Project Manager</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
     </table><br><br>
+    </div>
+    </div>
 </template>
 
 <script>
 import firebaseApp from '@/firebase.js'
 import { getFirestore } from "firebase/firestore"
-import { collection, doc, getDoc, getDocs } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore"
 const db = getFirestore(firebaseApp);
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -26,6 +39,7 @@ export default {
     data(){
         return{
             email:"",
+            name:"",
         }
     },
 
@@ -34,6 +48,7 @@ export default {
         onAuthStateChanged(auth, (user) => {
         if (user) {
             this.email = user.email
+            this.name = user.displayName
             console.log(this.email)
         } else {
             console.log("Sorry")
@@ -44,17 +59,13 @@ export default {
 
     methods: {
         async display() {
-            let memberDoc = await getDoc(doc(db, "user", this.email))
             let projects = await getDocs(collection(db, "projects"))
-            let memberProjectList = memberDoc.data().member_project
-            if (memberProjectList == undefined) {
-                memberProjectList = []
-            }
             let ind = 1 
             projects.forEach((doc) => {
                 let docData = doc.data()
                 var project_name = docData.project_name
-                if (memberProjectList.includes(project_name)) {
+                let member_list_name = docData.member_list_name
+                if (member_list_name.includes(this.name)) {
                     var table = document.getElementById("table")
                     var row = table.insertRow(ind)
                     let manager_name = docData.manager_name
@@ -62,15 +73,19 @@ export default {
                     var cell2 = row.insertCell(1); 
                     var cell3 = row.insertCell(2);
                     var cell4 = row.insertCell(3);
+                    var cell5 = row.insertCell(4);
+                    var cell6 = row.insertCell(5);
                     cell1.innerHTML = ind; 
                     cell2.innerHTML = project_name; 
                     cell3.innerHTML = manager_name;
+                    cell4.innerHTML = docData.start_date;
+                    cell5.innerHTML = docData.end_date;
                     var move = document.createElement("button")
                     move.innerHTML ="Check out"
                     move.onclick =  ()=>{
                         this.checkout(project_name)
                     }
-                    cell4.appendChild(move)
+                    cell6.appendChild(move)
 
                     ind+= 1
 

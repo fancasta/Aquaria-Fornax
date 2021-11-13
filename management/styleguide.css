@@ -1,4 +1,4 @@
-/* :root {
+:root {
   --alto: #dddddd;
   --azure-radiance: #007aff;
   --black: #000000;
@@ -149,4 +149,4 @@
 
 .border-1px-alto {
   border: 1px solid var(--alto);
-} */
+}

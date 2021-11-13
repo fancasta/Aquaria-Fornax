@@ -2,7 +2,7 @@
     <div class="d-flex justify-content-center m-2">
         <h1>Homepage</h1>
     </div>
-
+    <BackButton/>
     <div v-if = "role === 'Member'">
         <MemberDashboard/>
     </div>
@@ -24,7 +24,6 @@
         </div>
     </div>
     <div class="d-flex justify-content-center m-2">
-        <BackButton/>
         <LogOut/>
     </div>
     <div style="width: 100px; height: 200px;"></div>
@@ -54,6 +53,8 @@ export default {
     }, 
     data(){
         return{
+            user:false,
+            name:"",
             email:"",
             role:"",
         }
@@ -62,20 +63,17 @@ export default {
     mounted(){
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
-        if (user) {
-            console.log("I trusted you")
+            this.user = user;
             this.email = user.email
-            console.log(this.email)
+            this.name = user.displayName
             this.findRole()
-        } else {
-            console.log("Sorry")
-        }
-});
+
+        });
     },
 
     methods: {
         async findRole() {
-            const docRef = doc(db, "user", this.email);
+            const docRef = doc(db, "user", this.name);
             const docSnap = await getDoc(docRef);
             console.log("Document data:", docSnap.data().role);
             this.role = docSnap.data().role

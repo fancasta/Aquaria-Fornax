@@ -1,14 +1,17 @@
 <template>
+  <BackButton/>
   <dashboard-sample v-bind="dashboardSampleData" />
 </template>
 
 <script>
 import DashboardSample from "../components/Manager/DashboardSample.vue";
+import BackButton from "@/components/BasicComponent/BackButton.vue";
 
 export default {
   name: "App",
   components: {
     DashboardSample,
+    BackButton
   },
   data() {
     return { dashboardSampleData };

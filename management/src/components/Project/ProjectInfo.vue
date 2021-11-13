@@ -1,12 +1,11 @@
 <template>
-    <h1>Project Information</h1>
-    Project name: {{project_name}}
-    <br>
-    Description: {{description}}
-    <br>
-    Manager Name: {{manager_name}}
-    <br>
-    Manager Email: {{manager_email}}
+    <div class="container col-12 mt-3">
+        <h2 class="card-header">{{project_name}}</h2>
+        <p class="card-title">Manager Info: {{manager_name}} - {{manager_email}}</p>
+        <p class="card-title">From {{start_date}} to {{end_date}}</p>
+        <p class="card-text">Description: {{description}}</p>
+    </div>
+    <router-link to="/kpi">Our dream manager dashboard</router-link>
 </template>
 
 <script>
@@ -30,7 +29,8 @@ export default {
             description:"",
             manager_name:"",
             manager_email:"", 
-            project_member:[], 
+            start_date:"",
+            end_date:"",            
         }
     },
 
@@ -56,6 +56,8 @@ export default {
             this.description = projectData.description
             this.manager_name = projectDoc.manager_name
             this.manager_email = projectData.manager_email 
+            this.start_date = projectData.start_date
+            this.end_date = projectData.end_date
         }           
     }
 }

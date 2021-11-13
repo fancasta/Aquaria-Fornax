@@ -31,17 +31,26 @@ export default {
     data() {
         return {
             email: "",
-            password: ""
+            password: "",
+            error:""
         }
+    }, mounted() {
+        
     },
 
     methods: {
         submit() {
             const auth = getAuth();
-            signInWithEmailAndPassword(auth, this.email, this.password).then(() => this.$router.push({ path: './home' }))
+            signInWithEmailAndPassword(auth, this.email, this.password).then(() => this.$router.push({name:'Home'}))
+            .catch(err => {
+                this.error = err.message;
+                if (this.error != null) {
+                    alert(this.error)
+                }
+            })
         }, 
         reRoute() {
-            this.$router.push({ path: './register' })
+            this.$router.push({name:'Register'})
         }
     } 
 };

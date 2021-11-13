@@ -8,8 +8,6 @@
     </div>
     <label for="project_name">Project Name</label>
     <input class="form-control m-1" type="text" id="project_name" v-model="project_name">      
-    <label for="project_id">Project ID:</label>
-    <input class="form-control m-1" type="number" id="project_id" v-model="project_id">
     <label for="project_type">Project Type:</label>
     <select class="form-control m-1" id="project_type" v-model="project_type">
         <option value="Consumer & Market Research">Consumer & Market Research</option>
@@ -35,7 +33,7 @@
 <script>
 import firebaseApp from '@/firebase.js'
 import { getFirestore } from "firebase/firestore"
-import { doc, setDoc, getDoc, updateDoc, arrayUnion } from "firebase/firestore"
+import { doc, setDoc, updateDoc, arrayUnion } from "firebase/firestore"
 const db = getFirestore(firebaseApp);
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
@@ -47,10 +45,10 @@ export default {
     }, 
     data(){
         return{
+            user:false,
             manager_name:"",
             manager_email:"",
             project_name:"",
-            project_id:"",
             project_type:"",
             description:"",
             start_date: "",
@@ -61,22 +59,15 @@ export default {
     mounted(){
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
-        if (user) {
+            this.user = user;
             this.manager_email = user.email
+            this.manager_name = user.displayName
             console.log(this.manager_email)
-        } else {
-            console.log("Sorry")
-        }
-        this.getManagerName()
+            console.log(this.manager_name)
         });
     },
 
     methods: {
-        async getManagerName() {
-            let managerDoc = await getDoc(doc(db, "user", this.manager_email))
-            this.manager_name = managerDoc.data().name
-            console.log(this.manager_name)
-        },
         async submit() {
             alert("Create new project successfully!")
             await setDoc(doc(db, "projects", this.project_name), {
@@ -89,10 +80,11 @@ export default {
                 end_date: this.end_date
             });
 
-            const managerDoc = doc(db, "user", this.manager_email);
+            const managerDoc = doc(db, "user", this.manager_name);
             await updateDoc(managerDoc, {
                 managing_project: arrayUnion(this.project_name)
             });
+            location.reload()
         }
     },
 }

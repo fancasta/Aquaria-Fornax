@@ -1,5 +1,5 @@
 <template>
-    <button @click="reRoute" class="btn btn-primary m-1">Back</button>
+    <button @click="reRoute" class="btn btn-primary btn-lg m-3">Back</button>
 </template>
 
 <script>

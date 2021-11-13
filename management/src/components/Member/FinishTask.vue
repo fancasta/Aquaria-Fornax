@@ -1,7 +1,7 @@
 <template>
     <div class="container shadow mt-3 p-5 col-10">
     <div class="d-flex justify-content-center m-2">
-        <h1>Current task: {{task_name}} </h1>
+        <h2>Current task: {{task_name}} </h2>
     </div>
     
 
@@ -27,10 +27,9 @@ export default {
     data(){
         return{
             email:"",
+            name:"",
             project_name:"",
             task_name:"",
-            task_number:"",
-
         }
     },
 
@@ -39,58 +38,29 @@ export default {
         onAuthStateChanged(auth, (user) => {
         if (user) {
             this.email = user.email
-            console.log(this.email)
+            this.name = user.displayName
         } else {
             console.log("Sorry")
         }
-        this.getBasicInfo()
         });
+        this.getTaskName()
     },
 
     methods: {
-        async getBasicInfo() {
+        async getTaskName() {
             this.project_name = this.$route.query.project_name
-            let projectDoc = await getDoc(doc(db, "projects", this.project_name))
-            let projectData = projectDoc.data()
-            let project_type = projectData.project_type
+            let projectInfo = await getDoc(doc(db, "projects", this.project_name))
+            let projectData = projectInfo.data()
+            let member_list = projectData.member_list
+            this.task_name = member_list[this.name].task_name
+        },
 
-            let taskDoc = await getDoc(doc(db, "reference", project_type))
-            let taskData = taskDoc.data()
-
-            if (projectData.task1_user == this.email) {
-                this.task_name = taskData.task1
-                this.task_number = 1
-            } else if (projectData.task2_user == this.email) {
-                this.task_name = taskData.task2
-                this.task_number = 2
-            } else if (projectData.task3_user == this.email) {
-                this.task_name = taskData.task3
-                this.task_number = 3
-            } else {
-                this.task_name = taskData.task4
-                this.task_number = 4
-            }
-        }, 
         async submit() {
-            alert("Assign tasks successfully!")
+            alert("Finish Task!")
             const projectDoc = doc(db, "projects", this.project_name);
-            if (this.task_number == 1) {
-                await updateDoc(projectDoc, {
-                task1_status: 1,
-                });
-            } else if (this.task_number == 2) {
-                await updateDoc(projectDoc, {
-                task2_status: 1,
-                });
-            } else if (this.task_number == 3) {
-                await updateDoc(projectDoc, {
-                task3_status: 1,
-                });
-            } else {
-                await updateDoc(projectDoc, {
-                task4_status: 1,
-                });
-            }
+            await updateDoc(projectDoc, {
+                [`member_list.${this.name}.task_status`]: 1,
+            });
         }
     },
 }

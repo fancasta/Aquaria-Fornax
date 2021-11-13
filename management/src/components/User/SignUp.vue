@@ -52,7 +52,7 @@ import { getFirestore } from "firebase/firestore"
 import { doc, setDoc } from "firebase/firestore"
 const db = getFirestore(firebaseApp);
 
-import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, updateProfile} from "firebase/auth";
 
 export default {
     data() {
@@ -60,24 +60,41 @@ export default {
             username: "",
             email: "",
             role: "",
-            password: ""
+            password: "",
+            error: null
         }
     }, 
 
     methods: {
         submit() {
-            const auth = getAuth();
-            createUserWithEmailAndPassword(auth,this.email, this.password)
-            .then(()=> {
-                    alert("Your account has been successfully created!")
-                    setDoc(doc(db, "user", this.email), {
-                        role: this.role, 
-                        name: this.username,
-                        email: this.email,
-                        password: this.password
+            if (this.username == "" || this.email == "" || this.password == "") {
+                this.error = "Please fill in all fields"
+                alert(this.error)
+            } else {
+                const auth = getAuth();
+                createUserWithEmailAndPassword(auth,this.email, this.password)
+                .then((userCredential) => {
+                    const user = userCredential.user
+                    updateProfile(user, {
+                        displayName: this.username
                     })
-                    this.$router.push({path: './'})
-            });
+                }).catch(err => {
+                    this.error = err.message;
+                    if (this.error != null) {
+                        alert(this.error)
+                    }
+                }).then(() => {
+                    if (this.error == null) {
+                        alert("Your account has been successfully created!")
+                        setDoc(doc(db, "user", this.username), {
+                            role: this.role, 
+                            name: this.username,
+                            email: this.email,
+                        })
+                        this.$router.push({path: './'})
+                    }
+                });
+            }
         }
     }
 }

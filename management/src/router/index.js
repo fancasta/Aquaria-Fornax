@@ -3,6 +3,7 @@ import LoginPage from '@/views/LoginPage.vue'
 import Register from '@/views/Register.vue'
 import ProjectDisplay from '@/views/ProjectDisplay.vue'
 import ManagerKPI from '@/views/ManagerKPI.vue'
+import ChatPage from '@/views/ChatPage.vue'
 import Home from '@/views/Home.vue'
 
 const routes = [
@@ -30,6 +31,11 @@ const routes = [
         path: '/kpi',
         name: 'ManagerKPI',
         component: ManagerKPI
+    },
+    {
+        path: '/chat',
+        name: 'ChatPage',
+        component: ChatPage
     }
 ]
 
