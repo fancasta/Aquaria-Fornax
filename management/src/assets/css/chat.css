@@ -1,4 +1,4 @@
-@tailwind base;
+@tailwind ;
 @tailwind components;
 @tailwind utilities;
 
@@ -75,9 +75,7 @@ nav button {
 }
 
 .chatbox_bottom {
-  @apply fixed;
   @apply bottom-0;
-  @apply bg-gray-900;
   @apply shadow-lg;
   @apply w-full;
 }

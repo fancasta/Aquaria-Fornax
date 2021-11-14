@@ -1,4 +1,5 @@
 <template>
+    <Navbar/>
     <div class="d-flex justify-content-center m-2">
         <h1>Homepage</h1>
     </div>
@@ -35,6 +36,7 @@ import ManagerDashboard from '@/components/Manager/ManagerDashboard.vue'
 import MemberDashboard from '@/components/Member/MemberDashboard.vue'
 import LogOut from '@/components/User/LogOut.vue'
 import BackButton from '@/components/BasicComponent/BackButton.vue'
+import Navbar from '@/components/BasicComponent/Navbar.vue'
 import firebaseApp from '@/firebase.js'
 import { getFirestore } from "firebase/firestore"
 import { doc, getDoc } from "firebase/firestore"
@@ -49,7 +51,8 @@ export default {
         CreateProject,
         ManagerDashboard,
         MemberDashboard,
-        BackButton
+        BackButton,
+        Navbar
     }, 
     data(){
         return{

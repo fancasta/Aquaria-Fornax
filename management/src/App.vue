@@ -3,14 +3,19 @@
     <div class="demo-content">
       <div class="w-100 h-100">
         <router-view />
+        <Footer />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Footer from '@/components/BasicComponent/Footer.vue'
 export default {
   name: "App",
+  components: {
+    Footer
+  }, 
 };
 </script>
 

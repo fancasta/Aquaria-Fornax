@@ -1,13 +1,13 @@
 <template>
-    <div class="container shadow mt-3 p-5 col-10">
+    <div class="container mt-3 p-5 col-6">
     <div class="d-flex justify-content-center m-2">
-        <h1>Progress Bar</h1>
+        <h3>Progress Bar</h3>
     </div>
     <div class="progress">
         <div class="progress-bar bg-success" role="progressbar" :style="getWidthLength" :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="4"></div>
     </div>
     <div class="d-flex justify-content-center m-2">
-        <h1><b>Current Progress: {{progress}} / 4</b></h1>
+        <h3><b>Current Progress: {{progress}} / 4</b></h3>
     </div>
     </div>
 </template>

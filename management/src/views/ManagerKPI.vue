@@ -1,17 +1,25 @@
 <template>
+  <Navbar/>
+  <div class="d-flex justify-content-center m-2">
+      <h1>KPIs Summary</h1>
+  </div>
   <BackButton />
   <dashboard-sample v-bind="dashboardSampleData" />
 </template>
 
 <script>
+import "@/assets/css/styleguide.css";
+import "@/assets/css/kpidashboard.css";
 import DashboardSample from "../components/Manager/DashboardSample.vue";
 import BackButton from "@/components/BasicComponent/BackButton.vue";
+import Navbar from '@/components/BasicComponent/Navbar.vue'
 
 export default {
   name: "App",
   components: {
     DashboardSample,
     BackButton,
+    Navbar
   },
   data() {
     return { dashboardSampleData };

@@ -1,4 +1,5 @@
 <template>
+    <Navbar/>
     <BackButton/>
     <div v-if = "role === 'Member'">
         <ProjectInfo/>
@@ -13,6 +14,17 @@
         <div class="row">
         <div class="col-4">
             <ProjectInfo/>
+            <ProgressBar/>
+
+            <router-link to="/kpi">
+                <div class="d-flex justify-content-left m-3">
+                <button class="btn btn-primary">
+                    KPIs Summary
+                </button>
+                </div>
+            </router-link>
+        </div>
+        <div class="col-8">
             <div class="d-flex justify-content-center m-2">
             <button class="btn btn-primary" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
                 Add Member
@@ -31,16 +43,14 @@
             </div>
             </div>
         </div>
-        <div class="col-8">
-            <ProgressBar/>
-            <MemberList/>
-        </div>
+        <MemberList/>
         </div>
     </div>
     <div style="width: 100px; height: 200px;"></div>
 </template>
 
 <script>
+import Navbar from '@/components/BasicComponent/Navbar.vue'
 import ProjectInfo from '@/components/Project/ProjectInfo.vue'
 import AddMember from '@/components/Manager/AddMember.vue'
 import AssignTask from '@/components/Manager/AssignTask.vue'
@@ -69,7 +79,8 @@ export default {
         FinishTask,
         UpdateMessage,
         ProgressBar,
-        MemberList
+        MemberList,
+        Navbar
     }, 
     data(){
         return{

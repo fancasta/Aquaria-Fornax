@@ -5,7 +5,6 @@
         <p class="card-title">From {{start_date}} to {{end_date}}</p>
         <p class="card-text">Description: {{description}}</p>
     </div>
-    <router-link to="/kpi">Our dream manager dashboard</router-link>
 </template>
 
 <script>
@@ -54,7 +53,7 @@ export default {
             let projectData = projectDoc.data()
             this.project_name = projectData.project_name 
             this.description = projectData.description
-            this.manager_name = projectDoc.manager_name
+            this.manager_name = projectData.manager_name
             this.manager_email = projectData.manager_email 
             this.start_date = projectData.start_date
             this.end_date = projectData.end_date

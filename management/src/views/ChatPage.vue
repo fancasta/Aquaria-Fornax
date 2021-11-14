@@ -1,13 +1,37 @@
 <template>
-  <Chat />
+  <Navbar/>
+  <div class="d-flex justify-content-center p-3">
+        <h1>Social space</h1>
+    </div>
+    <BackButton/>
+  <div>
+  </div>
+  <div class="row">
+  <div class="col-2"></div>
+  <div class="col-8">
+  <div class="container shadow mt-3 p-5 col-6">
+    <Chat />
+  </div>
+  </div>
+        <div class="col-2"></div>
+  </div>
 </template>
 
 <script>
+import "@/assets/css/chat.css";
 import Chat from "@/components/Chat/Chat.vue";
+import Navbar from '@/components/BasicComponent/Navbar.vue'
+import BackButton from '@/components/BasicComponent/BackButton.vue'
+
+
 
 export default {
   name: "ChatPage",
-  components: { Chat },
+  components: { 
+    Chat,
+    Navbar,
+    BackButton 
+  },
 };
 </script>
 
@@ -42,7 +66,6 @@ export default {
 }
 
 .bottom {
-  @apply fixed;
   @apply bottom-0;
   @apply bg-gray-900;
   @apply shadow-lg;
