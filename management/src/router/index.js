@@ -4,6 +4,7 @@ import Register from '@/views/Register.vue'
 import ProjectDisplay from '@/views/ProjectDisplay.vue'
 import ManagerKPI from '@/views/ManagerKPI.vue'
 import ChatPage from '@/views/ChatPage.vue'
+import ProfilePage from '@/views/ProfilePage.vue'
 import Home from '@/views/Home.vue'
 
 const routes = [
@@ -36,6 +37,11 @@ const routes = [
         path: '/chat',
         name: 'ChatPage',
         component: ChatPage
+    },
+    {
+        path: '/profile',
+        name: 'ProfilePage',
+        component: ProfilePage
     }
 ]
 

@@ -1,5 +1,5 @@
 <template>
-    <button @click="submit" v-if="user" class="btn btn-primary btn-lg">Log Out</button>
+    <button @click="submit" v-if="user" class="btn btn-warning btn-sm">Log Out</button>
 </template>
 
 <script>

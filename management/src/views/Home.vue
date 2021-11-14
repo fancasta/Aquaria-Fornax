@@ -24,9 +24,6 @@
             <CreateProject/>
         </div>
     </div>
-    <div class="d-flex justify-content-center m-2">
-        <LogOut/>
-    </div>
     <div style="width: 100px; height: 200px;"></div>
 </template>
 
@@ -34,7 +31,6 @@
 import CreateProject from '@/components/Manager/CreateProject.vue'
 import ManagerDashboard from '@/components/Manager/ManagerDashboard.vue'
 import MemberDashboard from '@/components/Member/MemberDashboard.vue'
-import LogOut from '@/components/User/LogOut.vue'
 import BackButton from '@/components/BasicComponent/BackButton.vue'
 import Navbar from '@/components/BasicComponent/Navbar.vue'
 import firebaseApp from '@/firebase.js'
@@ -47,7 +43,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 export default {
     name: "Home", 
     components: {
-        LogOut, 
         CreateProject,
         ManagerDashboard,
         MemberDashboard,
