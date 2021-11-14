@@ -1,7 +1,7 @@
 <template>
   <div class="calendar-date-selected" data-id="11:436">
     <div
-      class="number-8 valign-text-middle montserrat-normal-white-14px"
+      class="number-8 dashboard-valign-text-middle montserrat-normal-white-14px"
       data-id="11:438"
     >
       {{ children }}

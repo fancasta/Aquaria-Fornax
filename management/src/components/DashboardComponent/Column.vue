@@ -2,7 +2,11 @@
   <div :class="[`column-4`, className || ``]" data-id="11:283">
     <div class="overlap-group5-3" data-id="an|2cBWDZ2o">
       <div
-        class="start-date valign-text-middle montserrat-normal-mine-shaft-14px"
+        class="
+          start-date
+          dashboard-valign-text-middle
+          montserrat-normal-mine-shaft-14px
+        "
         data-id="11:301"
       >
         {{ startDate }}
@@ -10,7 +14,11 @@
     </div>
     <div class="overlap-group4-3" data-id="an|wH0MoQQs">
       <div
-        class="text-15 valign-text-middle encodesans-normal-mine-shaft-14px"
+        class="
+          text-15
+          dashboard-valign-text-middle
+          encodesans-normal-mine-shaft-14px
+        "
         data-id="11:298"
       >
         {{ text15 }}
@@ -18,7 +26,11 @@
     </div>
     <div class="overlap-group3-4" data-id="an|Zs6woAHj">
       <div
-        class="text-14 valign-text-middle encodesans-normal-mine-shaft-14px"
+        class="
+          text-14
+          dashboard-valign-text-middle
+          encodesans-normal-mine-shaft-14px
+        "
         data-id="11:295"
       >
         {{ text14 }}
@@ -26,7 +38,11 @@
     </div>
     <div class="overlap-group2-6" data-id="an|6p0C5Rvm">
       <div
-        class="text-13 valign-text-middle encodesans-normal-mine-shaft-14px"
+        class="
+          text-13
+          dashboard-valign-text-middle
+          encodesans-normal-mine-shaft-14px
+        "
         data-id="11:292"
       >
         {{ text13 }}
@@ -34,7 +50,11 @@
     </div>
     <div class="overlap-group1-11" data-id="an|jn6Ar3B8">
       <div
-        class="text-12 valign-text-middle encodesans-normal-mine-shaft-14px"
+        class="
+          text-12
+          dashboard-valign-text-middle
+          encodesans-normal-mine-shaft-14px
+        "
         data-id="11:289"
       >
         {{ text12 }}
@@ -42,7 +62,11 @@
     </div>
     <div class="overlap-group-17" data-id="an|ohzM2Jv9">
       <div
-        class="text-11 valign-text-middle encodesans-normal-mine-shaft-14px"
+        class="
+          text-11
+          dashboard-valign-text-middle
+          encodesans-normal-mine-shaft-14px
+        "
         data-id="11:286"
       >
         {{ text11 }}
