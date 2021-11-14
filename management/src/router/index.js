@@ -4,6 +4,7 @@ import Register from '@/views/Register.vue'
 import ProjectDisplay from '@/views/ProjectDisplay.vue'
 import ManagerKPI from '@/views/ManagerKPI.vue'
 import ChatPage from '@/views/ChatPage.vue'
+import WhiteboardPage from "@/views/WhiteboardPage.vue";
 import ProfilePage from '@/views/ProfilePage.vue'
 import Home from '@/views/Home.vue'
 
@@ -39,6 +40,11 @@ const routes = [
         component: ChatPage
     },
     {
+      path: "/whiteboard",
+      name: "WhiteboardPage",
+      component: WhiteboardPage,
+    },
+    {
         path: '/profile',
         name: 'ProfilePage',
         component: ProfilePage
@@ -46,8 +52,8 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes
-})
+  history: createWebHistory(),
+  routes,
+});
 
-export default router
+export default router;

@@ -1,6 +1,6 @@
 <template>
-<nav class="navbar navbar-expand-lg p-2 bg-dark text-white">
-    <img style="width:100px" src="@/assets/logo.png" alt="">
+  <nav class="navbar navbar-expand-lg p-2 bg-dark text-white">
+    <img style="width: 100px" src="@/assets/logo.png" alt="" />
     <ul class="navbar-nav">
         <li class="nav-item m-2">
         <a class="nav-link" href="./home">Home</a>
@@ -8,14 +8,18 @@
         <li class="nav-item m-2">
         <a class="nav-link" href="./chat">Chat</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link" href="./whiteboard">Whiteboard</a>
+        </li>
         <li class="nav-item m-2">
         <a class="nav-link" href="./profile">Profile</a>
         </li>
         <li class="nav-item ml-6 m-auto">
             <LogOut/>
         </li>
+
     </ul>
-</nav>
+  </nav>
 </template>
 
 <script>
@@ -37,5 +41,4 @@ export default {
 </script>
 
 <style>
-
 </style>
