@@ -19,10 +19,8 @@
 <ul>  
   <li>Able to view individual project cycles to see the current stage of a project. Employees would be able to follow through and check off the items needed to be completed at each project cycle.</li>
   <li>Able to leave comments/feedback on collaborated projects - this would help minimise unnecessary meetings </li>
-  <li>A one-stop online place to share, retrieve and store working files </li>
+  <li>A whiteboard for employees to keep track of microtasks, classified into todo/review/done </li>
   <li>Communicate with co-workers through chat box to decrease the need of sending emails </li>
-  <li>A forum space for employees to share new learnt knowledge on emerging marketing trends, changes in consumers behaviours, changes in digital marketing landscape etc. to stay competitive and relevant in the business</li>
-  
 </ul>
 
 
