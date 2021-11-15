@@ -1,7 +1,7 @@
 # Aquaria Fornax - Project Management Website
 
 ## About Our Application
-<h5>Team Members [Group G32]</h5>
+<h5>Team Members [Group 2]</h5>
 <ul>  
   <li>Jin Jiayu</li>
   <li>Nguyen An Khanh</li>
@@ -21,7 +21,8 @@
   <li>Able to leave comments/feedback on collaborated projects - this would help minimise unnecessary meetings </li>
   <li>A one-stop online place to share, retrieve and store working files </li>
   <li>Communicate with co-workers through chat box to decrease the need of sending emails </li>
-  <li>A forum space for employees to share new learnt knowledge on emerging marketing trends, changes in consumers behaviours, changes in digital marketing landscape etc. to stay competitive and relevant in the business<li>
+  <li>A forum space for employees to share new learnt knowledge on emerging marketing trends, changes in consumers behaviours, changes in digital marketing landscape etc. to stay competitive and relevant in the business</li>
+  
 </ul>
 
 
