@@ -4,22 +4,22 @@
         <h1>Assign Task</h1>
     </div>
     <label for="task1_user"><b>Assign Task 1</b> - {{task1_name}}</label>
-    <select class="form-control m-1" id="task1_user" v-model="task1_user">
+    <select class="form-control m-1" id="task1_user" v-model="task1_user" required>
         <option v-for="member in member_list" :key="member.name" :value="member.name"> {{ member.name }}</option>
     </select>
 
     <label for="task2_user"><b>Assign Task 2</b> - {{task2_name}}</label>
-    <select class="form-control m-2" id="task2_user" v-model="task2_user">
+    <select class="form-control m-2" id="task2_user" v-model="task2_user" required>
         <option v-for="member in member_list" :key="member.name" :value="member.name"> {{ member.name }}</option>
     </select>
 
     <label for="task3_user"><b>Assign Task 3</b> - {{task3_name}}</label>
-    <select class="form-control m-2" id="task3_user" v-model="task3_user">
+    <select class="form-control m-2" id="task3_user" v-model="task3_user" required>
         <option v-for="member in member_list" :key="member.name" :value="member.name"> {{ member.name }}</option>
     </select>
 
     <label for="task4_user"><b>Assign Task 4</b> - {{task4_name}}</label>
-    <select class="form-control m-2" id="task4_user" v-model="task4_user">
+    <select class="form-control m-2" id="task4_user" v-model="task4_user" required>
         <option v-for="member in member_list" :key="member.name" :value="member.name"> {{ member.name }}</option>
     </select>
 
@@ -90,19 +90,24 @@ export default {
             this.task4_name = taskData.task4
         }, 
         async submit() {
-            alert("Assign tasks successfully!")
-            const projectDoc = doc(db, "projects", this.project_name);
-            await updateDoc(projectDoc, {
-                [`member_list.${this.task1_user}.task`] : 1,
-                [`member_list.${this.task1_user}.task_name`]: this.task1_name,
-                [`member_list.${this.task2_user}.task`] : 2,
-                [`member_list.${this.task2_user}.task_name`]: this.task2_name,
-                [`member_list.${this.task3_user}.task`] : 3,
-                [`member_list.${this.task3_user}.task_name`]: this.task3_name,
-                [`member_list.${this.task4_user}.task`] : 4,
-                [`member_list.${this.task4_user}.task_name`]: this.task4_name,
-            });
-            location.reload()
+            console.log("task4_user is", this.task4_user)
+            if (this.task1_user == "" || this.task2_user == "" || this.task3_user == "" || this.task4_user == "") {
+                alert("Please fill in all form")
+            } else {
+                alert("Assign tasks successfully!")
+                const projectDoc = doc(db, "projects", this.project_name);
+                await updateDoc(projectDoc, {
+                    [`member_list.${this.task1_user}.task`] : 1,
+                    [`member_list.${this.task1_user}.task_name`]: this.task1_name,
+                    [`member_list.${this.task2_user}.task`] : 2,
+                    [`member_list.${this.task2_user}.task_name`]: this.task2_name,
+                    [`member_list.${this.task3_user}.task`] : 3,
+                    [`member_list.${this.task3_user}.task_name`]: this.task3_name,
+                    [`member_list.${this.task4_user}.task`] : 4,
+                    [`member_list.${this.task4_user}.task_name`]: this.task4_name,
+                });
+                location.reload()
+            }
         }
     },
 }
