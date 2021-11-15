@@ -19,5 +19,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_MANAGEMENT_8C164 }}'
           channelId: live
           projectId: management-8c164
+          path: "./management"
           
 
